@@ -1,0 +1,2283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F1F9"
+    android:orientation="vertical"
+    android:weightSum="15" >
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:background="#16161c"
+        android:orientation="horizontal"
+        android:weightSum="10" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            layout="@layout/header_layout" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="5"
+            android:background="#0c5679"
+            android:onClick="onLogoutClicked"
+            android:paddingBottom="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:shadowColor="#dd000000"
+            android:shadowDx="-1"
+            android:shadowDy="-1"
+            android:shadowRadius="2"
+            android:text="Logout"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12.8"
+        android:paddingTop="10dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/ll_mainBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/transparent_border_box"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Intake Well"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionIntakeWell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInakeToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvWorkInProg"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInakeWorkOnProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInakeCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstructionIntakeImageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionIntakeSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionIntakeswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionIntakeSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionIntakeswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionIntakeSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionIntakeWellImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionIntakePhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionIntakeStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionIntakeStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionIntakeCompletiontDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionIntakeCompletiontDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Flush Mixture"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionFlushMixture"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionFlushToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionFlushInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionFlushCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstructionFlushImageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionFlushSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionFlushswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionFlushSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionFlushswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionFlushSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionFlushMixtureProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionFlushPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionFlushStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionFlushStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionFlushCompletionDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionFlushCompletiontDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Clariflocculator or plate settler or Tube settler"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionClariflocculator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClariflocculatorToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClariflocculatorInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClariflocculatorCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstructionClariflocculatorImageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionClariflocculatorSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionClariflocculatorswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionClariflocculatorSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionClariflocculatorswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionClariflocculatorSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionClariflocculatorProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionClariflocculatorPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionClariflocculatorStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionClariflocculatorStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionClariflocculatorCompletedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionClariflocculatorCompletiontDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Rapid Sand Filter"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionRapidSandFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionRapidSandFilterToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionRapidSandFilterInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionRapidSandFilterCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionRapidSandFilterSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionRapidSandFilterswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionRapidSandFilterSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionRapidSandFilterswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionRapidSandFilterSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionRapidSandFilterProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionRapidSandFilterPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionRapidSandFilterStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionRapidSandFilterStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionRapidSandFilterCompletedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionRapidSandFilterCompletedDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Clear Water Pump House"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionClearWaterPumpHouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClearWaterPumpHouseToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClearWaterPumpHouseInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionClearWaterPumpHouseCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionClearWaterPumpHouseSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionClearWaterPumpHouseswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionClearWaterPumpHouseSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionClearWaterPumpHouseswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionClearWaterPumpHouseSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionClearWaterPumpHouseProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionClearWaterPumpHousePhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionClearWaterPumpHouseStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionClearWaterPumpHouseStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionClearWaterPumpHouseCompletedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionClearWaterPumpHouseCompletedDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Installation of Electrical and Mechanical Machinery"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svInstallationElectricalMechanicalMachinery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallationElectricalMechanicalMachineryToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallationElectricalMechanicalMachineryInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallationElectricalMechanicalMachineryCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_InstallationElectricalMechanicalMachinerySelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_InstallationElectricalMechanicalMachineryswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_InstallationElectricalMechanicalMachinerySelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_InstallationElectricalMechanicalMachineryswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_InstallationElectricalMechanicalMachinerySelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_InstallationElectricalMechanicalMachineryProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_InstallationElectricalMechanicalMachineryPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlInstallationElectricalMechanicalMachineryStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvInstallationElectricalMechanicalMachineryStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlInstallationElectricalMechanicalMachineryCompletedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvInstallationElectricalMechanicalMachineryCompletedDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Chemical House"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionChemicalHouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionChemicalHouseToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionChemicalHouseInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionChemicalHouseCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionChemicalHouseSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionChemicalHouseswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionChemicalHouseSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionChemicalHouseswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionChemicalHouseSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionChemicalHouseProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionChemicalHousePhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionChemicalHouseStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionChemicalHouseStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionChemicalHouseCompletedDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionChemicalHouseCompletedDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Chemical room and installation of chlorination arrangement"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionInstallationChemicalRoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInstallationChemicalRoomToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInstallationChemicalRoomInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionInstallationChemicalRoomCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionInstallationChemicalRoomSelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionInstallationChemicalRoomswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionInstallationChemicalRoomSelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionInstallationChemicalRoomswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionInstallationChemicalRoomSelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionInstallChemicalRoomProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btn_ConstructionInstallationChemicalRoomPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionInstallationChemicalRoomStartDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionInstallationChemicalRoomStartDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingLeft="10dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstructionInstallationChemicalRoomCompletionDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionInstallationChemicalRoomCompletionDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/transparent_border_box"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="4" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Latitude"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:id="@+id/tv_latitude"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="3"
+                                android:background="@drawable/grey_border_box"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:singleLine="true"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333"
+                                android:textColorHint="#888888" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="4" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Longitude"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:id="@+id/tv_longitude"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="3"
+                                android:background="@drawable/grey_border_box"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:singleLine="true"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333"
+                                android:textColorHint="#888888" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="13dp"
+                            android:background="@drawable/blue_btn_selector"
+                            android:onClick="onLocationClicked"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="13dp"
+                            android:paddingTop="10dp"
+                            android:shadowColor="#dd000000"
+                            android:shadowDx="-1"
+                            android:shadowDy="-1"
+                            android:shadowRadius="2"
+                            android:text="GET LOCATION"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:background="#E5F1F9"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text="Location"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#888888" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    android:gravity="center"
+                    android:weightSum="2" >
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/green_btn_selector"
+                        android:onClick="onPostClicked"
+                        android:shadowColor="#dd000000"
+                        android:shadowDx="-1"
+                        android:shadowDy="-1"
+                        android:shadowRadius="2"
+                        android:text="SUBMIT"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ll_mainBody"
+                android:layout_marginLeft="10dp"
+                android:background="#E5F1F9"
+                android:padding="3dp"
+                android:text=" Water Treatment Plant (WTP) "
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="#555555" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_footer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0c5679" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_splashText"
+            android:layout_centerInParent="true"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Powered by "
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cyber-SWIFT"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

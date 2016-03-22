@@ -1,0 +1,1824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5F1F9"
+    android:orientation="vertical"
+    android:weightSum="15" >
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:background="#16161c"
+        android:orientation="horizontal"
+        android:weightSum="10" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            layout="@layout/header_layout" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="5"
+            android:background="#0c5679"
+            android:onClick="onLogoutClicked"
+            android:paddingBottom="5dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:shadowColor="#dd000000"
+            android:shadowDx="-1"
+            android:shadowDy="-1"
+            android:shadowRadius="2"
+            android:text="Logout"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sv_body"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12.8"
+        android:paddingTop="10dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/ll_mainBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/transparent_border_box"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Sinking of Pile For Intake Jetty"
+                    android:textColor="#555555" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/grey_border_box"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <com.cyberswift.phe.utility.SegmentedGroup
+                        android:id="@+id/sgSinkingPileIntakeJetty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        segmentedgroup:sc_border_width="1dp"
+                        segmentedgroup:sc_checked_text_color="#f5f5f5"
+                        segmentedgroup:sc_corner_radius="10dp"
+                        segmentedgroup:sc_tint_color="#333333" >
+
+                        <RadioButton
+                            android:id="@+id/rbSinkingPileIntakeJetty_Yes"
+                            style="@style/RadioButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes"
+                            android:textAppearance="?android:attr/textAppearance" />
+
+                        <RadioButton
+                            android:id="@+id/rbSinkingPileIntakeJetty_No"
+                            style="@style/RadioButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:text="No"
+                            android:textAppearance="?android:attr/textAppearance" />
+                    </com.cyberswift.phe.utility.SegmentedGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llSinkingPileIntakeJettyDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/grey_border_box"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/etSinkingPileIntakeJettyDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_margin="2dp"
+                            android:background="@android:color/transparent"
+                            android:gravity="top"
+                            android:hint="Please Enter Description."
+                            android:inputType="textMultiLine"
+                            android:lines="3"
+                            android:maxLines="3"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Intake Jetty(Fixed or Floating)"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svIntakeJetty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="5dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionIntakeToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionIntakeToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionIntakeWorkInProg"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionIntakeWorkInProg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:id="@+id/tvConstructionIntakeCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionIntakeCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstructionIntakeimageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionIntakeselectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionIntakeswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionIntakeselectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionIntakeswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionIntakeselectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionIntakeImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnConstructionIntakePhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstIntakeDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstIntakeDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstIntakeDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstIntakeDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Laying of Suction Main"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svLayingOfSuction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbLayingSuctionToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbLayingSuctionWorkInProg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbLayingSuctionCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_LayingSuctionimageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_LayinSuctionselectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_LayinSuctionswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_LayinSuctionselectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_LayinSuctionswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_LayinSuctionselectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_LayinSuctionImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnLayinSuctionPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlLayingSuctionDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvLayingSuctionDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlLayingSuctionDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvLayingSuctionDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Raw Water pump house"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionRawWaterPumpHouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstPumpHouseToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstPumpHouseProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstPumpHouseCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstPumpHouseimageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstPumpHouseselectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstPumpHouseswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstPumpHouseselectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstPumpHouseswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstPumpHouseselectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstPumpHouseImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnConstPumpHousePhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstWaterPumpDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstWaterPumpDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstWaterPumpDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstWaterPumpDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Installation of pumping and electrical machinery"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svPumpingElectricalMachineIstallation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallPumpToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallPumpInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbInstallPumpCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_InstallPumpimageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_InstallPumpselectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_InstallPumpswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_InstallPumpselectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_InstallPumpswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_InstallPumpselectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_InstallPumpImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnInstallPumpPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlMachineryInstallDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvMachineryInstallDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlMachineryInstallDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvMachineryInstallDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Construction of Substation(Electrical)"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svConstructionSubstation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionSubstationToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionSubstationInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbConstructionSubstationCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ConstructionSubstationimageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_ConstructionSubstationselectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionSubstationswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_ConstructionSubstationselectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_ConstructionSubstationswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_ConstructionSubstationselectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ConstructionSubstationImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnConstructionSubstationPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstSubStationDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstSubStationDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlConstSubStationDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvConstSubStationDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="8dp"
+                    android:text="Laying of raw water delivery main"
+                    android:textColor="#555555" />
+
+                <ScrollView
+                    android:id="@+id/svLayingWaterDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/grey_border_box"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Yet to be Started"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbWaterDeliveryToBeStarted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Work in Progress"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <CheckBox
+                                android:id="@+id/cbWaterDeliveryInProgress"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:weightSum="2" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Completed" />
+
+                            <CheckBox
+                                android:id="@+id/cbWaterDeliveryCompleted"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@drawable/chkbx_selector_form"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:padding="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_WaterDeliveryImageHolder"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="13dp" >
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/vp_WaterDeliverySelectedImages"
+                                    android:layout_width="200dp"
+                                    android:layout_height="160dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/default_empty" />
+
+                                <View
+                                    android:id="@+id/v_WaterDeliveryswipeLeft"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="5dp"
+                                    android:layout_toLeftOf="@+id/vp_WaterDeliverySelectedImages"
+                                    android:background="@drawable/swipe_left"
+                                    android:visibility="invisible" />
+
+                                <View
+                                    android:id="@+id/v_WaterDeliveryswipeRight"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="5dp"
+                                    android:layout_toRightOf="@+id/vp_WaterDeliverySelectedImages"
+                                    android:background="@drawable/swipe_right"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_WaterDeliveryImageProgress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center"
+                                android:text="[Image added 0/3]"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <Button
+                                android:id="@+id/btnWaterDeliveryPhoto"
+                                android:layout_width="200dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/blue_btn_selector"
+                                android:shadowColor="#dd000000"
+                                android:shadowDx="-1"
+                                android:shadowDy="-1"
+                                android:shadowRadius="2"
+                                android:text="PHOTO"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Start"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlLayWaterDeliveryDateOfStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvLayWaterDeliveryDateOfStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="8dp"
+                            android:padding="5dp"
+                            android:text="Date of Completion"
+                            android:textColor="#555555" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlLayWaterDeliveryDateOfCompletion"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/grey_border_box" >
+
+                            <TextView
+                                android:id="@+id/tvLayWaterDeliveryDateOfCompletion"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="35dp"
+                                android:singleLine="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <ImageView
+                                android:layout_width="31.5dp"
+                                android:layout_height="31.5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="2dp"
+                                android:padding="1dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/calendar" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/transparent_border_box"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="4" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Latitude"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:id="@+id/tv_latitude"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="3"
+                                android:background="@drawable/grey_border_box"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:singleLine="true"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333"
+                                android:textColorHint="#888888" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="13dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:weightSum="4" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Longitude"
+                                android:textColor="#333333" />
+
+                            <TextView
+                                android:id="@+id/tv_longitude"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="3"
+                                android:background="@drawable/grey_border_box"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:singleLine="true"
+                                android:textAllCaps="true"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="#333333"
+                                android:textColorHint="#888888" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="13dp"
+                            android:background="@drawable/blue_btn_selector"
+                            android:onClick="onLocationClicked"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="13dp"
+                            android:paddingTop="10dp"
+                            android:shadowColor="#dd000000"
+                            android:shadowDx="-1"
+                            android:shadowDy="-1"
+                            android:shadowRadius="2"
+                            android:text="GET LOCATION"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="#ffffff"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:background="#E5F1F9"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text="Location"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#888888" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    android:gravity="center"
+                    android:weightSum="2" >
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="3dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/green_btn_selector"
+                        android:onClick="onPostClicked"
+                        android:shadowColor="#dd000000"
+                        android:shadowDx="-1"
+                        android:shadowDy="-1"
+                        android:shadowRadius="2"
+                        android:text="SUBMIT"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ll_mainBody"
+                android:layout_marginLeft="10dp"
+                android:background="#E5F1F9"
+                android:padding="3dp"
+                android:text=" INTAKE and Raw Water Main "
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="#555555" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_footer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0c5679" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_splashText"
+            android:layout_centerInParent="true"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Powered by "
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cyber-SWIFT"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

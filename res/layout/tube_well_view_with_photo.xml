@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grey_border_box"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" 
+            android:layout_marginTop="5dp">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" >
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:button="@null"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/chkbx_selector_form"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Yet to be Started"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:button="@null"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/chkbx_selector_form"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Work in Progress"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="3dp"
+                    android:button="@null"
+                    android:drawablePadding="20dp"
+                    android:drawableRight="@drawable/chkbx_selector_form"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Completed"
+                    android:textAppearance="?android:attr/textAppearance" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_imageHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp" >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_ConstructionOfZonalSelectedImages"
+                    android:layout_width="200dp"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/default_empty" />
+
+                <View
+                    android:id="@+id/v_ConstructionOfZonalSwipeLeft"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/vp_ConstructionOfZonalSelectedImages"
+                    android:background="@drawable/swipe_left"
+                    android:visibility="invisible" />
+
+                <View
+                    android:id="@+id/v_ConstructionOfZonalSwipeRight"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/vp_ConstructionOfZonalSelectedImages"
+                    android:background="@drawable/swipe_right"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_ConstructionOfZonalImageProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="[Image added 0/3]"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#333333" />
+
+            <Button
+                android:id="@+id/btn_ConstructionOfZonalPhoto"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/blue_btn_selector"
+                android:shadowColor="#dd000000"
+                android:shadowDx="-1"
+                android:shadowDy="-1"
+                android:shadowRadius="2"
+                android:text="PHOTO"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="3dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:text="Date of Start"
+            android:textColor="#555555" />
+
+        <RelativeLayout
+            android:id="@+id/rlConstructionOfZonalStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/grey_border_box" >
+
+            <TextView
+                android:id="@+id/tvConstructionOfZonalStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="35dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="31.5dp"
+                android:layout_height="31.5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="2dp"
+                android:padding="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/calendar" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="3dp"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="10dp"
+            android:text="Date of Completion"
+            android:textColor="#555555" />
+
+        <RelativeLayout
+            android:id="@+id/rlConstructionOfZonalCompletionDate"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/grey_border_box" >
+
+            <TextView
+                android:id="@+id/tvConstructionOfZonalCompletionDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="35dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#333333" />
+
+            <ImageView
+                android:layout_width="31.5dp"
+                android:layout_height="31.5dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="2dp"
+                android:padding="1dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/calendar" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

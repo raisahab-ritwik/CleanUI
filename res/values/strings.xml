@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PHE</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_internet">No network connection found! Please check your network connection.</string>
+    <string name="response_timeout">Response time out error! Please check your internet connection and try again.</string>
+    <string name="auth_failure">Server authentication failed! Please try again.</string>
+    <string name="server_error">Server isn\'t responding! Please try again.</string>
+    <string name="network_error">Network not found! Please check your internet connection and try again.</string>
+    <string name="parse_error">Unable to parse Data! Please try again.</string>
+    <string name="offline_storage">Network connection is weak!\nData has been saved in offline mode.\nPlease use "OFFLINE DATA SYNC" button at the "ACTION PAGE" to upload the data when network connection is available.</string>
+
+    <string-array name="district_array">
+        <item>ALIPURDUAR</item>
+        <item>BANKURA</item>
+        <item>BIRBHUM</item>
+        <item>BURDWAN</item>
+        <item>COOCH BEHAR</item>
+        <item>DAKSHIN DINAJPUR</item>
+        <item>DARJEELING</item>
+        <item>EAST MEDINIPUR</item>
+        <item>HOOGHLY</item>
+        <item>HOWRAH</item>
+        <item>JALPAIGURI</item>
+        <item>KOLKATA</item>
+        <item>MALDAH</item>
+        <item>MURSHIDABAD</item>
+        <item>NADIA</item>
+        <item>NORTH 24 PARGANAS</item>
+        <item>PURULIA</item>
+        <item>SOUTH 24 PARGANAS</item>
+        <item>UTTAR DINAJPUR</item>
+        <item>WEST MEDINIPUR</item>
+    </string-array>
+    <string-array name="district_id_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="scheme_type_array">
+        <item>Surface water</item>
+        <item>Sub-surface water</item>
+        <item>Ground Water</item>
+    </string-array>
+    <string-array name="surface_pipeline_type_array">
+        <item>DI</item>
+        <item>CI</item>
+        <item>PVC</item>
+        <item>HDPE</item>
+        <item>MDPE</item>
+        <item>AC</item>
+        <item>GI</item>
+        <item>MS</item>
+        <item>FG</item>
+    </string-array>
+    <string-array name="surface_pipeline_diameter_array">
+        <item>125</item>
+        <item>90</item>
+        <item>110</item>
+        <item>200</item>
+        <item>250</item>
+    </string-array>
+    <string-array name="surface_pipeline_position_array">
+        <item>LHS</item>
+        <item>RHS</item>
+    </string-array>
+    <string-array name="surface_pipeline_yesno_array">
+        <item>Y</item>
+        <item>N</item>
+    </string-array>
+    <string-array name="surface_pipeline_diameter_di_array">
+        <item>80</item>
+        <item>100</item>
+        <item>125</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+        <item>300</item>
+        <item>350</item>
+        <item>400</item>
+        <item>450</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>750</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+    </string-array>
+    <string-array name="surface_pipeline_diameter_ac_array">
+        <item>80</item>
+        <item>100</item>
+        <item>125</item>
+        <item>150</item>
+        <item>200</item>
+        <item>250</item>
+    </string-array>
+    <string-array name="surface_pipeline_diameter_upvc_array">
+        <item>75</item>
+        <item>90</item>
+        <item>110</item>
+        <item>125</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>225</item>
+        <item>250</item>
+        <item>280</item>
+        <item>315</item>
+    </string-array>
+    <string-array name="surface_pipeline_diameter_hdpe_array">
+        <item>75</item>
+        <item>90</item>
+        <item>110</item>
+        <item>125</item>
+        <item>140</item>
+        <item>160</item>
+        <item>180</item>
+        <item>200</item>
+        <item>225</item>
+    </string-array>
+
+</resources>
